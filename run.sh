@@ -54,12 +54,7 @@ if ! upgrade_library_pip "urllib3"; then
     install_library_apt "urllib3" || sudo pip install --upgrade "urllib3"
 fi
 
-
-read -p "Node IP: " nodeip
-echo $nodeip >> config.py
-read -p "Node root PASSWORD: " nodePASSWORD
-echo $nodePASSWORD >> config.py
-
+python3 collect_config.py
 
 python3 main.py
 
